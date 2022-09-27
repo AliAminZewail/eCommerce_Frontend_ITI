@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Apparels Online Store</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .mySlides {
+            display: none;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 300px;
+            /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-------------------------------------------------------- nav bar ------------------------------------------------------------>
+
+    <nav class="navbar" id="mynav">
+        <div class="nav">
+            <img src="img/Elogo.png" class="brand-logo" alt="">
+            <div class="nav-items">
+                <!-- create a ul element outside nav items-->
+                <ul class="links-container">
+                    <li class="link-item"><a href="#CenterProducts" class="link"> Products </a></li>
+                    <li class="link-item"><a href="#faq" class="link"> Faq's </a></li>
+                    <li class="link-item"><a href="#contact" class="link"> Contact </a></li>
+                </ul>
+                <!--     <a href="" onclick="console.log('woow');  return false;"><img  src="img/user.png" alt=""></a>     
+            -->
+                <button class="open-button"
+                    style="border:none; background-color: transparent; padding:15px; margin-right: 30px;"
+                    onclick="openForm()"><img src="img/user.png" alt=""></button>
+                <button class="open-button"
+                    style="border:none; background-color: transparent; padding:15px; margin-right: 30px;"
+                    onclick="show_pup()"><img src="img/cart.png" alt=""></button>
+
+
+            </div>
+        </div>
+    </nav>
+<!------------------------------------------badge popup------------------------------------->
+<span class="badge"></span>
+
+<div class="cardPU" id="pup">
+    <div class="carts-product"></div>
+</div>
+
+    <!---------------------------------------------------------- login popup ------------------------------------------------------->
+
+
+    <div class="form-popup" id="loginForm">
+        <form action="#" class="form-container" id="logForm" onsubmit="event.preventDefault();">
+            <div class="sing" style="display: flex;">
+                <button onclick="" class="loginButton">Login</button>
+                <button onclick="showSignUp()" class="signButton">Sign Up</button>
+            </div>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email">
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw">
+            <label style="color: red; display: none;" id="loginalert">mail not found please click sign up</label>
+            <br>
+
+
+            <button type="button" onclick="loginfor()" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+
+    <div class="form-popup" id="signForm">
+        <form action="#" class="form-container" id="signUpForm" onsubmit="event.preventDefault();">
+            <div class="sing" style="display: flex;">
+                <button class="loginButton" onclick="openForm()">Login</button>
+                <button class="signButton" onclick="">Sign Up</button>
+            </div>
+
+            <label for="email1"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email1" onchange="validateMail()">
+            <label style="color: red; display: none;" id="alert">not a valid mail</label>
+            <br>
+            <label for="psw1"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw1">
+
+            <label for="psw2"><b>Re-enter Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw2" onchange="validatePassword()">
+            <label style="color: red; display: none;" id="passAlert">password doesn't match</label>
+            <br>
+            <button type="button" onclick="submitfor()" class="btn">signUp</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <!---------------------------------------------------------- hero section ------------------------------------------------------->
+    <div class="bg">
+
+        <div class="row">
+
+            <div class="column">
+                <center>
+                    <br><br><br><br><br>
+                    <button id="btn"
+                        style="border-radius: 10px; background-color: coral; width: 20%; border-style: none; height:35px;">Special
+                        for you</button>
+                    <br>
+                    <b style="font-size: 35px;">Here is the new collection to make you look beautiful!</b>
+            </div>
+            </center>
+
+
+            <div class="column">
+                <div class="w3-content w3-section" style="max-width:500px">
+                    <img class="mySlides" src="img/sale.jpg" style="width:100%">
+                    <img class="mySlides" src="img/add.jpg" style="width:100%">
+                    <img class="mySlides" src="img/boy.png" style="width:100%">
+                    <img class="mySlides" src="img/accn.jpg" style="width:100%">
+                    <img class="mySlides" src="img/trou.jpg" style="width:100%">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <!-------------------------------------------------------------- count down ----------------------------------------------------->
+    <center>
+        <div class="row">
+            <button class="countdown">
+                <div class="c1">
+                    <p> Get <font style="font-weight: bold; color: rgb(186, 84, 11);">50% Off</font> Before It's too
+                        Late!
+                        Offer ends on Tuesday, 11 October 2022</p>
+                </div>
+
+
+                <table id="tcount">
+                    <tr id="countdown_timer">
+                        <td><span id="days">x</span></td>
+                        <td><span id="hours">x</span></td>
+                        <td><span id="minutes">x</span></td>
+                        <td><span id="seconds">x</span></td>
+                    </tr>
+                    <tr id="countdown_labels">
+                        <td><span>Days</span></td>
+                        <td><span>Hours</span></td>
+                        <td><span>Minutes</span></td>
+                        <td><span>Seconds</span></td>
+                    </tr>
+                </table>
+            </button>
+        </div>
+
+    </center>
+
+    <!------------------------------------------------------------------------------------------------------------------------------>
+    <!-- Now create product sliders ( cards-container )-->
+    <section class="product">
+        <h2 class="product-category">best selling</h2>
+        <button class="pre-btn"> <img src="img/arrow.png" alt=""></button>
+        <button class="nxt-btn"> <img src="img/arrow.png" alt=""></button>
+        <div class="product-container">
+
+            <!-- Card 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="img/card1.png" class="product-thumb" alt="">
+                    <button class="card-btn">add to whislist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-des">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="img/card2.png" class="product-thumb" alt="">
+                    <button class="card-btn">add to whislist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-des">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="img/card3.png" class="product-thumb" alt="">
+                    <button class="card-btn">add to whislist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-des">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="img/card4.png" class="product-thumb" alt="">
+                    <button class="card-btn">add to whislist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-des">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="img/card5.png" class="product-thumb" alt="">
+                    <button class="card-btn">add to whislist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-des">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="img/card6.png" class="product-thumb" alt="">
+                    <button class="card-btn">add to whislist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-des">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="img/card7.png" class="product-thumb" alt="">
+                    <button class="card-btn">add to whislist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-des">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="img/card8.png" class="product-thumb" alt="">
+                    <button class="card-btn">add to whislist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-des">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!---------------------------------------------------------------------------------------------------------------->
+    <p id="CenterProducts" style="text-align: center; font-size:30px; text-decoration: underline orange 4px;">
+        <b>Products</b></p> <br>
+    <div class="nav">
+        <div class="nav-items">
+            <!-- create a ul element outside nav items-->
+            <ul class="links-container">
+                <li class="link-item"><a href="#" class="link"><b style="color: black;">All</b></a></li>
+                <li class="link-item"><a href="#" class="link"><b style="color: black;">Sunglasses</b></a></li>
+                <li class="link-item"><a href="#" class="link"><b style="color: black;">Trousers</b></a></li>
+                <li class="link-item"><a href="#" class="link"> <b style="color: black;">Necklace</b></a></li>
+            </ul>
+        </div>
+    </div>
+    <br>
+    <!-- Collection -->
+    <section class="collection-container">
+        <a href="#" class="collection">
+            <img src="img/a.png" alt="">
+            <p class="collection-title">Necklace <br> apparels</p>
+        </a>
+
+        <a href="#" class="collection">
+            <img src="img/sun.jpg" alt="">
+            <p class="collection-title">Sunglasses <br> apparels</p>
+        </a>
+
+        <a href="#" class="collection">
+            <img src="img/t.jpg" style="height: 600px;" alt="">
+            <p class="collection-title">Trousers <br> apparels</p>
+        </a>
+    </section>
+    <br>
+
+    <!-- ----------------------------------------------------FAQ's---------------------------------------------------------------->
+
+    <center>
+        <p id="faq"><b style="font-size:30px; text-decoration: underline orange 4px;">FAQ's</b></p>
+        <div class="accordion">
+            <div class="contentBox">
+                <div class="label">How much money should I pay for delivery?</div>
+                <div class="labelContent">
+
+                    <p>For delivery inside Alexandria for <font style="font-weight: bold; color: rgb(185, 141, 59);">50
+                            LE</font> within two days from the date of order </p>
+                    <p>For delivery within 24 hours <font style="font-weight: bold; color: rgb(185, 141, 59);">100 LE
+                        </font>
+                    </p>
+                    <p>Another Governorates <font style="font-weight: bold; color: rgb(185, 141, 59);">75 LE</font>
+                    </p>
+
+
+                </div>
+            </div>
+            <div class="contentBox">
+                <div class="label">How many days should I wait before reaching you?</div>
+                <div class="labelContent">
+                    <p>The maximum duration is <font style="font-weight: bold; color: rgb(185, 141, 59);"> two days
+                        </font>
+                    </p>
+                    <p>And within <font style="font-weight: bold; color: rgb(185, 141, 59);">24 hours</font> for an
+                        additional amount of money</p>
+                </div>
+            </div>
+            <div class="contentBox">
+                <div class="label">Do you have refund policy?</div>
+                <div class="labelContent">
+                    <p>In the case of any defects in the product only upon previewing the order on the day of receipt
+                    </p>
+                </div>
+            </div>
+        </div>
+    </center>
+
+    <!---------------------------------------------------------Contact Us----------------------------------------------------------->
+    <center>
+        <div class="bg" style="height: 850px;">
+
+            <p style="font-size: 30px; text-decoration: underline orange 4px;" id="contact"><b> Contact Us </b></p>
+            <br>
+            <p style="font-size: 20px; text-decoration: underline wavy orange 1.5px;">We'd love to hear from you! </p>
+            <br><br>
+            <div class="smallbg">
+                <ul class="links-container">
+                    <li><a class="active" id="aTag" href="#footer-social">Reach Us</a></li>
+                    <li><a class="active" id="aTag" onclick="show_aboutUS()" style="cursor: pointer;">About Us</a></li>
+                    <li><a class="active" id="aTag" onclick="show_findUS()" style="cursor: pointer;">Find Us</a></li>
+                </ul>
+                <center>
+                    <p id="display">
+                        <b style="font-size:20px ;"> Let's drink a coffe together! </b> <br><br>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3413.0133004303602!2d29.903900515359776!3d31.192644570371698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c394ebd03ec1%3A0x16cbff5d844ff34b!2sInformation%20Technology%20Institute!5e0!3m2!1sen!2seg!4v1663850631757!5m2!1sen!2seg"
+                            width="80%" height="450" style="border:0.5; text-align: center;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </p>
+                </center>
+            </div>
+        </div>
+    </center>
+
+    <!---------------------------------------------------------Footer----------------------------------------------------------->
+
+    <footer id="footer-social">
+
+        <div class="footer-social-container">
+
+            <div>
+                <a href="" class="social-link">terms & services</a>
+                <a href="" class="social-link">privacy page</a>
+            </div>
+
+            <div>
+                <a href="" class="social-link">instagram</a>
+                <a href="" class="social-link">facebook</a>
+                <a href="" class="social-link">twitter</a>
+            </div>
+
+        </div>
+        <p class="footer-credit">Best apparels online store</p>
+    </footer>
+
+    <!---------------------------------------------------------Scripts----------------------------------------------------------->
+
+    <!-- repeat this nav bar in all pages // by js -->
+    <script src="js/nav.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/home.js"></script>
+
+</body>
+
+</html>

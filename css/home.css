@@ -1,0 +1,362 @@
+@import 'nav.css' ;
+@import 'footer.css';
+
+
+
+/********************************************** Countdown *******************************************************/
+
+.countdown{
+    display: flex;
+    width: 1200px;
+    border-style: none;
+    border-radius: 20px;
+    height: 100px;
+    background-color: #dfb664;
+ 
+}
+
+/* c1 as a Column */
+.c1{
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px;
+    font-size: 28px;
+}
+ 
+
+/* tcount as a Column ,,  c1 and tcount in one row */  
+#tcount{
+    float: left;
+    width: 50%;
+    padding: 2px;
+    font-size: 1rem;
+    margin: 0.1rem;
+}
+
+#countdown_timer span{
+    display: inline-block;
+    padding: 0.6rem;
+    width: 120px;
+    height: 40px;
+    margin: 0.8rem;
+    border: 2px solid rgb(148, 133, 39);
+    background-color: rgb(241, 234, 202);
+}
+
+/********************************************** Hero Section *******************************************************/
+
+.bg{
+width: 100%;
+height: calc(100vh - 117px);
+background-color: beige;
+background-size: cover;
+box-sizing: border-box;
+}
+
+.hero-section{
+    display: flex;
+    align-items: center;
+}
+.sub-heading1{
+flex: 5;
+ color: black
+}
+.sub-heading2{
+    padding: 0.5px;
+    margin-right: 0px; 
+}
+
+/********************************************** popup *******************************************************/
+.cardPU{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px rgb(0 0 0/15%);
+    padding: 1em;
+    position: fixed;
+    top: 0;
+    left: 90%;
+    text-align: center;
+    width: 20%;
+    height: 100%; ;
+    transform: translate(-50% ,-50%);
+    transition: all .8s;
+    opacity: 0;
+}
+
+.cardPU.open{
+    opacity: 1;
+    top:130%;
+}
+/****************************************************************************************************/
+
+
+
+.imgw{
+margin-left: 932px;
+margin-top: -19px;
+}
+
+.product{
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.product-category{
+    padding: 0 10vw; /* padding left and right */
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+}
+
+.product-container{
+    padding: 0 2vw;
+    display: flex;  /* align the card side by side */
+    overflow-x: auto;  /*add scroll bar when there is an overflow in x direction */
+    scroll-behavior: smooth;
+}
+
+/* to hide product containers scroll bar */
+.product-container::-webkit-scrollbar{
+display: none;
+}
+
+.product-card{
+    flex: 0 0 auto; /* This allow the card to have its own width and height as we are using flexbox*/
+    width: 250px;
+    height: 450px; 
+    margin-right: 40px;
+}
+
+.product-image{
+    position: relative; /* we will have some absolute element inside */
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.product-thumb{
+    width: 100%;
+    height: 350px;
+  object-fit: cover; 
+}
+
+.discount-tag{
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    color: #ff7d7d;
+    right: 10px;
+    top: 10px;
+    text-transform: capitalize;
+}
+
+.card-btn{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%); /* to align the button the center on x-axis */
+    padding: 10px;
+    width: 90%;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background: white;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.product-card:hover .card-btn{
+    opacity: 1;
+}
+
+.card-btn:hover{
+    background: #efefef;
+}
+
+.product-info{
+    width: 100%;
+    height: 100px;
+    padding-top: 10px;
+}
+
+.product-brand{
+    text-transform: uppercase;
+}
+
+.product-short-des{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    opacity: 0.5;
+    text-transform: capitalize;
+    margin: 5px 0;
+}
+
+.price{
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.actual-price{
+    margin-left: 20px;
+    opacity: 0.5; /* make it lightly*/
+    text-decoration: line-through;
+}
+
+.pre-btn, .nxt-btn{
+border: none;
+width: 10vw;
+height: 100%;
+position: absolute;
+top: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #fff 100%);
+cursor: pointer;
+z-index: 8;
+}
+
+.pre-btn{
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.nxt-btn{
+    right: 0;
+}
+
+.pre-btn img, .nxt-btn img{
+    opacity: 0.2;
+}
+
+.pre-btn:hover img, .nxt-btn:hover img{
+    opacity: 1;
+} 
+
+.collection-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.collection{
+    position: relative;
+}
+
+.collection img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.collection p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    text-transform: capitalize;
+}
+
+/* nth child is used to select nth number of element*/
+.collection:nth-child(3){
+    /* use grid columns for last collection to cover 2 columns*/
+grid-column: span 2;
+margin-bottom: 10px;
+}
+
+/************************************* FAQ's ******************************************/
+.accordion{
+    max-width: 800px;
+}
+
+.accordion .contentBox{
+position: relative;
+margin: 20px 20px;
+}
+
+.accordion .contentBox .label{
+    position: relative;
+    padding: 10px;
+    border: 2px solid orange;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.accordion .contentBox .label::before{
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+.accordion .contentBox.active .label::before{
+    content: '-';
+}
+
+.accordion .contentBox .labelContent{
+    position: relative;
+    background: whitesmoke;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    overflow-y: auto;
+}
+
+.accordion .contentBox.active .labelContent{
+    height: 150px;
+    padding: 10px;
+}
+
+
+/************************************* Contact Us ******************************************/
+.smallbg{
+    border: 4px solid white;
+    box-sizing: border-box;
+    width: 1200px;
+    height: 800px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+}
+
+/*.smallbg {
+    width: 1200px;
+    border-radius: 25px;
+    background-color: #dfb664;
+    height: 100px;
+} */
+  div.smallbg a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 30px;
+    text-decoration: none;
+  
+    
+  }
+  
+  div.smallbg a:hover {                       
+    background-color: #dfb664;
+  }
+
+
+/************************************* About Us  ******************************************/
+
+.links-container li a.active ,  a:hover {
+opacity: 1;
+}
+
