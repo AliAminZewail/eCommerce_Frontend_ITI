@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="./css/home.css">
+    <link href="./css/nav.css" rel="stylesheet" />
+
+    <title>Project Name</title>
+</head>
+
+<body onload="storeCart()">
+
+    <nav class="navbar">
+        <div class="nav">
+            <img src="./img/Elogo.png" class="brand-logo" alt="">
+            <div class="nav-items">
+                <!-- create a ul element outside nav items-->
+                <ul class="links-container">
+                    <li class="link-item"><a href="./index.html" class="link" style="padding: 0 200px; margin-right: 40px;"> Home </a></li>
+
+                </ul>
+
+
+
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <center>
+            <h2>Cart</h2>
+        </center>
+        <div class="flex-container">
+            <div class="cart-items" id="cart-container">
+
+            </div>
+        </div>
+        <div class="bottom-cta">
+            <span class="btn cta"><a href="./app.html">Shop More</a></span>
+            <span class="btn cta"><a href="./checkout.html">Proceed to checkout</a></span>
+        </div>
+    </main>
+
+
+    <script src="./js/cart.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link href="./css/nav.css" rel="stylesheet" />
+
+    <title>Our Products</title>
+    </style>
+
+</head>
+
+<body onload="getUser()">
+    <!-------------------------------------------------------- nav bar ------------------------------------------------------------>
+    <nav class="navbar">
+        <div class="nav">
+            <img src="./img/Elogo.png" class="brand-logo" alt="">
+            <div class="nav-items">
+                <!-- create a ul element outside nav items-->
+                <ul class="links-container">
+                    <li class="link-item"><a href="./index.html" class="link"
+                            style="padding: 0 200px; margin-right: 40px;"> Home </a></li>
+
+                </ul>
+
+                <button class="open-button"
+                    style=" border : none; background-color: transparent; padding:15px; margin-right: 30px;"
+                    onclick="openForm()"><img src="./img/user.png" alt=""></button>
+
+                <button class="open-button"
+                    style="border:none; background-color: transparent; padding:15px; margin-right: 30px;"
+                    onclick="getCart()" id=""><img src="./img/cart.png" alt=""></button>
+
+
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!---------------------------------------------------------- login popup ------------------------------------------------------->
+
+    <div class="form-popup" id="loginForm">
+        <form action="#" class="form-container" id="logForm" onsubmit="event.preventDefault();">
+            <div class="sing" style="display: flex; width:100%;">
+                <button onclick="" class="loginButton">Login</button>
+                <button onclick="showSignUp()" class="signButton">Sign Up</button>
+            </div>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email">
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw">
+            <label style="color: red; display: none;" id="loginalert">mail not found please click sign up</label>
+            <br>
+
+
+            <button type="button" onclick="loginfor()" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+
+    <div class="form-popup" id="signForm">
+        <form action="#" class="form-container" id="signUpForm" onsubmit="event.preventDefault();">
+            <div class="sing" style="display: flex; width:100%;">
+                <button class="loginButton" onclick="openForm()">Login</button>
+                <button class="signButton" onclick="">Sign Up</button>
+            </div>
+
+            <label for="email1"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email1" onchange="validateMail()">
+            <label style="color: red; display: none;" id="alert">not a valid mail</label>
+            <br>
+            <label for="psw1"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw1">
+
+            <label for="psw2"><b>Re-enter Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw2" onchange="validatePassword()">
+            <label style="color: red; display: none;" id="passAlert">password doesn't match</label>
+            <br>
+            <button type="button" onclick="submitfor()" class="btn">signUp</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+    <!---->
+    <p id="CenterProducts"
+        style="text-align: center; font-size:30px; padding-top: 30px; text-decoration: underline orange 4px;">
+        <b>Products</b>
+    </p> <br>
+    <div class="nav">
+        <div class="nav-items">
+            <!-- create a ul element outside nav items-->
+            <ul class="links-container">
+                <li id="cat-all" class="link-item"><a href="#" onclick="getAllItems()" class="link"><b
+                            style="color: black;">All</b></a></li>
+                <li id="cat-Glasses" class="link-item"><a href="#" onclick="getGlasses()" class="link"><b
+                            style="color: black;">Sunglasses</b></a></li>
+                <li id="cat-Pants" class="link-item"><a href="#" onclick="getPants()" class="link"><b
+                            style="color: black;">Trousers</b></a></li>
+                <li id="cat-Accessories" class="link-item"><a href="#" onclick="getAccessories()" class="link"> <b
+                            style="color: black;">Necklace</b></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <main class="container">
+        <div class="flex-container">
+            <div class="product-list-container" id="product-container"></div>
+        </div>
+    </main>
+
+
+    <script src="./js/login.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

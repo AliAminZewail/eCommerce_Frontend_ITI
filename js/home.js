@@ -6,17 +6,17 @@ const preBtn = [...document.querySelectorAll('.pre-btn')];
 
 
 productContainers.forEach((item, i) => {
-// Store the card dimensions inside this variable
-let containerDimensions = item.getBoundingClientRect();
-let containerWidth = containerDimensions.width;
+  // Store the card dimensions inside this variable
+  let containerDimensions = item.getBoundingClientRect();
+  let containerWidth = containerDimensions.width;
 
-nxtBtn[i].addEventListener('click' , ()=> {
+  nxtBtn[i].addEventListener('click', () => {
     item.scrollLeft += containerWidth;
-})
+  })
 
-preBtn[i].addEventListener('click' , ()=> {
+  preBtn[i].addEventListener('click', () => {
     item.scrollLeft -= containerWidth;
-})
+  })
 
 })
 
@@ -28,67 +28,67 @@ function carousel() {
   var i;
   var x = document.getElementsByClassName("mySlides");
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+    x[i].style.display = "none";
   }
   myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
+  if (myIndex > x.length) { myIndex = 1 }
+  x[myIndex - 1].style.display = "block";
   setTimeout(carousel, 2000); // Change image every 2 seconds
 }
 
 ///////////////////////////////////////////////////// ~Pop Up~ /////////////////////////////////////////////////////////////
 
-function show_pup(){
-    document.getElementById("pup").classList.toggle("open");
-   // document.getElementById("pup").innerHTML=` <h1> hello </h1>`
+function show_pup() {
+  document.getElementById("pup").classList.toggle("open");
+  // document.getElementById("pup").innerHTML=` <h1> hello </h1>`
 }
 
 ///////////////////////////////////////////////////// ~Count Down~ ///////////////////////////////////////////////////////////
 
-const storeOpening= new Date('October 11, 2022 00:00:00');
+const storeOpening = new Date('October 11, 2022 00:00:00');
 setCountdown(storeOpening); // calls setCountdown only once!
 // calls setCountdown every second
-setInterval(function(){
-    setCountdown(storeOpening);
-},1000);
-function setCountdown(countingDownTime){
-    let now = new Date();
-    let timeRemaining= countingDownTime- now;
+setInterval(function () {
+  setCountdown(storeOpening);
+}, 1000);
+function setCountdown(countingDownTime) {
+  let now = new Date();
+  let timeRemaining = countingDownTime - now;
   //  console.log(timeRemaining);
-    // convert it in regular unit
-    let seconds = Math.floor(timeRemaining / 1000);
-    let minutes = Math.floor(timeRemaining / (1000 * 60));
-    let hours = Math.floor(timeRemaining / (1000 * 60 * 60));
-    let days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-    //console.log(seconds , minutes , hours , days);
-    let daysToDisplay = days;
-    let hoursToDisplay = hours - (days * 24);
-    let minutesToDisplay = minutes - (hours * 60);
-    let secondsToDisplay = seconds - (minutes * 60);
+  // convert it in regular unit
+  let seconds = Math.floor(timeRemaining / 1000);
+  let minutes = Math.floor(timeRemaining / (1000 * 60));
+  let hours = Math.floor(timeRemaining / (1000 * 60 * 60));
+  let days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+  //console.log(seconds , minutes , hours , days);
+  let daysToDisplay = days;
+  let hoursToDisplay = hours - (days * 24);
+  let minutesToDisplay = minutes - (hours * 60);
+  let secondsToDisplay = seconds - (minutes * 60);
   //  console.log(daysToDisplay , hoursToDisplay , minutesToDisplay , secondsToDisplay);
-var daysElement=document.getElementById("days");
-var hoursElement=document.getElementById("hours");
-var minutesElement=document.getElementById("minutes");
-var secondsElement=document.getElementById("seconds");
-    daysElement.textContent=daysToDisplay;
-    hoursElement.textContent=hoursToDisplay;
-    minutesElement.textContent=minutesToDisplay;
-    secondsElement.textContent=secondsToDisplay;
+  var daysElement = document.getElementById("days");
+  var hoursElement = document.getElementById("hours");
+  var minutesElement = document.getElementById("minutes");
+  var secondsElement = document.getElementById("seconds");
+  daysElement.textContent = daysToDisplay;
+  hoursElement.textContent = hoursToDisplay;
+  minutesElement.textContent = minutesToDisplay;
+  secondsElement.textContent = secondsToDisplay;
 }
 
 ///////////////////////////////////////////////////// ~FAQ's~ ///////////////////////////////////////////////////////////
 
 const accordion = document.getElementsByClassName("contentBox");
-for( var i = 0 ; i < accordion.length ; i++){
-    accordion[i].addEventListener("click" , function(){
+for (var i = 0; i < accordion.length; i++) {
+  accordion[i].addEventListener("click", function () {
     this.classList.toggle('active')
-    });
+  });
 }
 
 ///////////////////////////////////////////////////// ~About Us~ ///////////////////////////////////////////////////////////
 
-function show_aboutUS(){
-document.getElementById("display").innerHTML=`
+function show_aboutUS() {
+  document.getElementById("display").innerHTML = `
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -187,8 +187,8 @@ the payment services facilitate the payments of online transactions within our c
 }
 ///////////////////////////////////////////////////// ~Find Us~ ////////////////////////////////////////////////////////////
 
-function show_findUS(){
-document.getElementById("display").innerHTML=`
+function show_findUS() {
+  document.getElementById("display").innerHTML = `
 <b style="font-size:20px ;">  Let's drink a coffe together! </b> <br><br>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3413.0133004303602!2d29.903900515359776!3d31.192644570371698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c394ebd03ec1%3A0x16cbff5d844ff34b!2sInformation%20Technology%20Institute!5e0!3m2!1sen!2seg!4v1663850631757!5m2!1sen!2seg" 
 width="80%" height="450" style="border:0.5; text-align: center;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -197,23 +197,23 @@ width="80%" height="450" style="border:0.5; text-align: center;" allowfullscreen
 
 ///////////////////////////////////////////////////// ~Active li~ ////////////////////////////////////////////////////////////
 
-let list=document.querySelectorAll("li a");
-let aTags=document.querySelectorAll("#aTag");
-list.forEach((li)=>{
-   li.addEventListener("click" , (e)=> {
-    li.forEach((li)=>{
-    // remove active class from all li
+let list = document.querySelectorAll("li a");
+let aTags = document.querySelectorAll("#aTag");
+list.forEach((li) => {
+  li.addEventListener("click", (e) => {
+    li.forEach((li) => {
+      // remove active class from all li
       li.classList.remove("active")
-        });
+    });
     // add active class to current clicked
-    aTags.style.backgroundColor =  e.currentTarget.classList.add("active");
-  //  aTags.style.backgroundColor = e.currentTarget.dataset;
-   });
+    aTags.style.backgroundColor = e.currentTarget.classList.add("active");
+    //  aTags.style.backgroundColor = e.currentTarget.dataset;
+  });
 });
 
 
 
-    
+
 
 
 

@@ -1,6 +1,6 @@
-const createFooter = () =>{
-let footer = document.querySelector("footer");
-footer.innerHTML= `
+const createFooter = () => {
+    let footer = document.querySelector("footer");
+    footer.innerHTML = `
 <div class="footer-social-container">
 
     <div>
