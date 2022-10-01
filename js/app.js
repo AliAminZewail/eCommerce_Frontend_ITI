@@ -191,7 +191,6 @@ function renderProducts(cat) {
 }
 
 function addToCart(prodId) {
-  // console.log(sessionStorage.getItem("isLogged"));
   let counter = 1;
 
   if (sessionStorage.getItem("isLogged") === "true") {
