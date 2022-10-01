@@ -127,10 +127,7 @@ function renderCheckout() {
           indexrr.push(j);
           PRODUCTS_DATA[j].count = CART[i].count;
           PRODUCTS_DATA[j].cartID = i;
-
         }
-
-
       }
     }
 
@@ -154,13 +151,13 @@ function renderCheckout() {
   } else {
     document.getElementById('confirmPurchase').style.display = 'none';
   }
-
-
-
 }
+
+
 function confirmPurchase() {
   localStorage.removeItem('cartIitems');
-
   window.alert('Thank You for purchase.');
-  window.location = '/index.html';
+  let rowContainer = document.getElementById('checkout-table-row').innerHTML = '';
+  document.getElementById('total').innerHTML = '';
+  
 }

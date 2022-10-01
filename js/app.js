@@ -116,6 +116,7 @@ let CART = "";
 
 function getUser() {
   getAllItems();
+  showCount(false);
 }
 
 function getCart() {
@@ -190,12 +191,15 @@ function renderProducts(cat) {
 }
 
 function addToCart(prodId) {
-  console.log(sessionStorage.getItem("isLogged"));
+  // console.log(sessionStorage.getItem("isLogged"));
+  let counter = 1;
+
   if (sessionStorage.getItem("isLogged") === "true") {
     let CART = [];
     CART = JSON.parse(localStorage.getItem("cartIitems"));
     found = false;
     CART.forEach((item) => {
+      counter += item.count;
       if (item.id == prodId) {
         item.count += 1;
         found = true;
@@ -205,6 +209,7 @@ function addToCart(prodId) {
     if (!found)
       CART.push({ id: prodId, count: 1 });
 
+    showCount(true);
     localStorage.setItem("cartIitems", JSON.stringify(CART));
   }
   else {
@@ -214,3 +219,17 @@ function addToCart(prodId) {
 }
 
 
+function showCount(showCount) {
+  let counter = 0;
+  if (showCount) {
+    counter = 1;
+  }
+  CART = JSON.parse(localStorage.getItem("cartIitems"));
+  CART.forEach((item) => {
+    counter += item.count;
+  });
+
+  document.getElementById('counter').innerHTML = counter;
+
+
+}
